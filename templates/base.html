@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Добро пожаловать</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+    <link type="text/css" href="{% static 'css/navbar.css' %}" rel="stylesheet" />
+    {% block mainmenu %}
+    <nav id="mainNav">
+        <ul>
+            <li style="float: left"><a href="#"><i class="icon-home"></i><br />Главная</a></li>
+                <li style="float: left"><a href="{% url 'view_hero_user' %}"><i class="icon-desktop"></i><br />Герои</a>
+                        <ul class='sub-menus'>
+                            <li><a href='#'>Добавить героя</a></li>
+                            <li><a href='#'>Посмотреть героев пользователей</a></li>
+                        </ul>
+                </li>
+                <li style="float: left"><a href="#"><i class="icon-user"></i><br />Будет какая хрень</a></li>
+                <li style="float: left"><a href="#"><i class="icon-user"></i><br />Найм</a></li>
+                <li style="float: left"><a href="#"><i class="icon-user"></i><br />Боссы</a>
+                    <ul class='sub-menus'>
+                        <li><a href='#'>Services Sub Menu 1</a></li>
+                        <li><a href='#'>Services Sub Menu 2</a></li>
+                        <li><a href='#'>Services Sub Menu 3</a></li>
+                    </ul>
+                </li>
+                <li style="float: right"><a href="#"><i class="icon-twitter"></i><br />Выход</a></li>
+                <li style="float: right"><a href="#"><i class="icon-twitter"></i><br />Профиль</a></li>
+                    <li style="float: right"><a href="#"><i class="icon-twitter"></i><br />Админка</a>
+                    <ul class='sub-menus'>
+                    <li><a href='#'>Назначение командиров</a></li>
+                    <li><a href='#'>Привязка игроков к командирам</a></li>
+                </ul>
+                </li>
+                <li style="float: right"><a href="#"><i class="icon-twitter"></i><br />Вход</a></li>
+                <li style="float: right"><a href="#"><i class="icon-twitter"></i><br />Регистрация</a></li>
+        </ul><div class="clr"></div>
+    </nav>
+{% endblock mainmenu %}
+</head>
+<body>
+	<div class="content-text">
+{% block content %}
+{% endblock %}
+	</div>
+</body>
+</html>
