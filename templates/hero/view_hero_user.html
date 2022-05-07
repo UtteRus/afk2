@@ -1,5 +1,60 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block content %}
-<h1>Hello</h1>
+    <link type="text/css" href="{% static 'css/table.css' %}" rel="stylesheet"/>
+
+    <div>
+        <table>
+            <thead>
+            <tr>
+                <th></th>
+                <th>Имя героя</th>
+                <th>Фракция</th>
+                <th>Развитие</th>
+                <th>ИП</th>
+                <th>Нужно ИП</th>
+                <th>Мебель</th>
+                <th>Нужно Мебели</th>
+                <th>Гравировка</th>
+                <th>Нужно Гравировки</th>
+                <th>Общий рейтинг</th>
+                <th>ПвЕ рейтинг</th>
+                <th>ПвП рейтинг</th>
+                <th>Искаженный мир рейтинг</th>
+                <th>Ивент рейтинг</th>
+                <th>Бездна рейтинг</th>
+                <th>Дата изменений</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><a>
+                    <button type="button" style="float: right" class="custom-btn btn-14">Редактировать
+                    </button>
+                </a>
+                </td>
+
+            </tr>
+            </tbody>
+        </table>
+
+    </div>
 {% endblock content %}

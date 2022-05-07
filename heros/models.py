@@ -44,9 +44,11 @@ class HelpChoice:
 
 
 class Hero(models.Model):
-    hero_name = models.CharField(max_length=255, null=True)
-    fraction = models.CharField(max_length=255, null=True)
-    img_hero = models.ImageField(upload_to="hero", null=True)
+    hero_name = models.CharField(max_length=255, null=True,
+                                 verbose_name='Имя героя')
+    fraction = models.CharField(max_length=255, null=True,
+                                verbose_name='Фракция')
+    img_hero = models.ImageField(upload_to="hero", null=True, blank=True)
     time_create = models.DateTimeField(auto_now_add=True)
     time_update = models.DateTimeField(auto_now=True)
     named_item_recommended = models.IntegerField(default=0,
@@ -104,8 +106,13 @@ class Hero(models.Model):
                                     verbose_name='рейтинг бездны',
                                     max_length=2)
 
-    def __int__(self):
-        return self.pk
+    class Meta:
+        verbose_name = 'Герои'
+        verbose_name_plural = 'Герои'
+        ordering = ['hero_name']
+
+    def __str__(self):
+        return self.hero_name
 
 
 class Specifications(models.Model):
@@ -130,9 +137,16 @@ class Specifications(models.Model):
                                  verbose_name='Развитие персонажа',
                                  max_length=20)
     hair = models.BooleanField(verbose_name='найм', default=False)
-    date_update_specifications = models.DateTimeField(auto_now=True)
+    date_update_specifications = models.DateTimeField(auto_now=True,
+                                                      verbose_name='дата '
+                                                                   'изменения')
     hero = models.ForeignKey(Hero, on_delete=models.CASCADE,
-                             verbose_name='ид героев')
+                             verbose_name='герой')
+
+    class Meta:
+        verbose_name = 'Спецификации героев'
+        verbose_name_plural = 'Спецификации героев'
+        ordering = ['hero']
 
     def __int__(self):
         return self.pk

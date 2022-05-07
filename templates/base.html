@@ -9,12 +9,8 @@
     {% block mainmenu %}
     <nav id="mainNav">
         <ul>
-            <li style="float: left"><a href="#"><i class="icon-home"></i><br />Главная</a></li>
+            <li style="float: left"><a href="{% url 'home_page' %}"><i class="icon-home"></i><br />Главная</a></li>
                 <li style="float: left"><a href="{% url 'view_hero_user' %}"><i class="icon-desktop"></i><br />Герои</a>
-                        <ul class='sub-menus'>
-                            <li><a href='#'>Добавить героя</a></li>
-                            <li><a href='#'>Посмотреть героев пользователей</a></li>
-                        </ul>
                 </li>
                 <li style="float: left"><a href="#"><i class="icon-user"></i><br />Будет какая хрень</a></li>
                 <li style="float: left"><a href="#"><i class="icon-user"></i><br />Найм</a></li>
@@ -27,13 +23,8 @@
                 </li>
                 <li style="float: right"><a href="#"><i class="icon-twitter"></i><br />Выход</a></li>
                 <li style="float: right"><a href="#"><i class="icon-twitter"></i><br />Профиль</a></li>
-                    <li style="float: right"><a href="#"><i class="icon-twitter"></i><br />Админка</a>
-                    <ul class='sub-menus'>
-                    <li><a href='#'>Назначение командиров</a></li>
-                    <li><a href='#'>Привязка игроков к командирам</a></li>
-                </ul>
-                </li>
-                <li style="float: right"><a href="#"><i class="icon-twitter"></i><br />Вход</a></li>
+                <li style="float: right"><a href="#"><i class="icon-twitter"></i><br />Админка</a></li>
+                <li style="float: right"><a href="{% url 'login' %}"><i class="icon-twitter"></i><br />Вход</a></li>
                 <li style="float: right"><a href="#"><i class="icon-twitter"></i><br />Регистрация</a></li>
         </ul><div class="clr"></div>
     </nav>

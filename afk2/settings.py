@@ -143,4 +143,5 @@ STATICFILES_DIRS = [Path(BASE_DIR, 'static')]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-MEDIA_ROOT = Path.cwd() / 'img'
+MEDIA_ROOT = Path(BASE_DIR, 'static', 'img')
+MEDIA_URL = '/img/'
