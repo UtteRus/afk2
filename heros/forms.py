@@ -9,3 +9,4 @@ class EditSpecificationsHeroForm(forms.ModelForm):
         fields = ['named_item', 'furniture', 'engraving', 'evolution',
                   'hair', ]
         exclude = ['hero', 'user']
+

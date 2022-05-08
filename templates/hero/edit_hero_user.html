@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Hello</h1>
+<h1>{{ user_name }}</h1>
     <form action="{% url 'edit_hero' pk %}" method="post">
     {% csrf_token %}
     {% for f in form %}

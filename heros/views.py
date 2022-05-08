@@ -21,6 +21,7 @@ def edit_hero(request, specifications_id):
                   'hair': heros_spec.hair,
                   'hero': heros_spec.hero,
                   'user': heros_spec.user, }
+
     if request.method == 'POST':
         form = EditSpecificationsHeroForm(request.POST, instance=heros_spec)
         if form.is_valid():
@@ -29,5 +30,10 @@ def edit_hero(request, specifications_id):
     else:
         form = EditSpecificationsHeroForm(initial=my_initial)
 
+    my_dict = {
+        'pk': specifications_id,
+        'user_name': f'{heros_spec.user.username} {heros_spec.hero.hero_name}',
+        'form': form
+    }
     return render(request, 'hero/edit_hero_user.html',
-                  {'form': form, 'pk': specifications_id})
+                  context=my_dict)
