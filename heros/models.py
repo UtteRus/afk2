@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.core.validators import MinValueValidator, MaxValueValidator
 from django.db import models
 
@@ -142,6 +143,9 @@ class Specifications(models.Model):
                                                                    'изменения')
     hero = models.ForeignKey(Hero, on_delete=models.CASCADE,
                              verbose_name='герой')
+    user = models.ForeignKey(settings.AUTH_USER_MODEL,
+                             on_delete=models.CASCADE,
+                             verbose_name='Пользователь')
 
     class Meta:
         verbose_name = 'Спецификации героев'
@@ -150,8 +154,3 @@ class Specifications(models.Model):
 
     def __int__(self):
         return self.pk
-
-
-
-
-

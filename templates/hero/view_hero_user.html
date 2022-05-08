@@ -28,8 +28,11 @@
             </tr>
             </thead>
             <tbody>
+            {% for hero in my_hero %}
             <tr>
                 <td></td>
+                <td>{{ hero.hero.hero_name }}</td>
+                <td>{{ hero.hero.fraction }}</td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -43,10 +46,8 @@
                 <td></td>
                 <td></td>
                 <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td><a>
+                <td>{{ hero.pk }}</td>
+                <td><a href="{% url 'edit_hero' hero.pk %}">
                     <button type="button" style="float: right" class="custom-btn btn-14">Редактировать
                     </button>
                 </a>
@@ -54,6 +55,7 @@
 
             </tr>
             </tbody>
+            {% endfor %}
         </table>
 
     </div>

@@ -10,7 +10,7 @@ class HeroAdmin(admin.ModelAdmin):
 
 
 class SpecificationsAdmin(admin.ModelAdmin):
-    list_display = ('hero', 'named_item', 'furniture', 'engraving',
+    list_display = ('user', 'hero', 'named_item', 'furniture', 'engraving',
                     'evolution',
                     'hair', 'date_update_specifications',)
     list_display_links = ('hero', )
