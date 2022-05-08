@@ -22,7 +22,7 @@ class HelpChoice:
         (LEGENDARY, 'Легендарный'),
         (LEGENDARY_PLUS, 'Легендарный+'),
         (MYTHICAL, 'Мифический'),
-        (MYTHICAL_PLUS, 'Легендарный+'),
+        (MYTHICAL_PLUS, 'Мифический+'),
         (EXALTED, 'Возвышенный'),
         (EXALTED1, 'Возвышенный 1'),
         (EXALTED2, 'Возвышенный 2'),

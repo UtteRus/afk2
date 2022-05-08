@@ -7,12 +7,12 @@ from .models import Specifications, Hero
 
 def view_hero_user(request):
     name = 'admin'
-    my_hero = Specifications.objects.all()
+    my_hero = Specifications.objects.filter(user=3)
     return render(request, 'hero/view_hero_user.html', {"my_hero": my_hero})
 
 
 def edit_hero(request, specifications_id):
-    # post = get_object_or_404(Specifications, pk=specifications_id)
+    post = get_object_or_404(Specifications, pk=specifications_id)
     heros_spec = Specifications.objects.get(pk=specifications_id)
     my_initial = {'named_item': heros_spec.named_item,
                   'furniture': heros_spec.furniture,
@@ -21,9 +21,9 @@ def edit_hero(request, specifications_id):
                   'hair': heros_spec.hair,
                   'hero': heros_spec.hero,
                   'user': heros_spec.user, }
-
     if request.method == 'POST':
         form = EditSpecificationsHeroForm(request.POST, instance=heros_spec)
+        print(form)
         if form.is_valid():
             form.save()
             return redirect('view_hero_user')

@@ -16,7 +16,7 @@ class SpecificationsAdmin(admin.ModelAdmin):
     list_display_links = ('hero', )
     search_fields = ('hero',)
     list_editable = ('hair',)
-    list_filter = ('hair',)
+    list_filter = ('hair', 'hero__fraction')
 
 
 admin.site.register(Hero, HeroAdmin)

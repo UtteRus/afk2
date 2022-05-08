@@ -30,7 +30,11 @@
             <tbody>
             {% for hero in my_hero %}
             <tr>
+                {% if hero.hero.img_hero %}
+                <td><img class="img-responsive thumbnail" src="{{ hero.hero.img_hero.url}}" alt="img" /></td>
+                {% else %}
                 <td></td>
+                {% endif %}
                 <td>{{ hero.hero.hero_name }}</td>
                 <td>{{ hero.hero.fraction }}</td>
                 <td></td>
