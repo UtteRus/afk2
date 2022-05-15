@@ -1,12 +1,14 @@
 {% extends 'base.html' %}
+{% load rest_framework %}
 
 {% block content %}
-<h1>{{ user_name }}</h1>
-    <form action="{% url 'edit_hero' pk %}" method="post">
+<h1>{{ heros_spec.pk }}</h1>
+    <form action="{% url 'edit_hero' specifications_pk=heros_spec.pk %}" method="post">
     {% csrf_token %}
-    {% for f in form %}
-        <p><label class="form-label" for="{{ f.id_for_label }}">{{ f.label }}</label>{{ f }} </p>
-    {% endfor %}
+    {% render_form serializer %}
+{#    {% for f in form %}#}
+{#        <p><label class="form-label" for="{{ f.id_for_label }}">{{ f.label }}</label>{{ f }} </p>#}
+{#    {% endfor %}#}
         <button type="submit">Сохранить</button>
     </form>
 {% endblock content %}

@@ -4,7 +4,7 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('hero/', views.view_hero_user, name='view_hero_user'),
-    path('hero/edit-hero/<int:specifications_id>/', views.edit_hero,
-         name='edit_hero')
+    path('hero/', views.ViewHeroUserAPIList.as_view(), name='view_hero_user'),
+    path('hero/edit-hero/<int:specifications_pk>/',
+         views.EditHeroAPI.as_view(), name='edit_hero'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
