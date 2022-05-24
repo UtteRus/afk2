@@ -15,7 +15,7 @@ class ViewHeroUserAPIList(APIView):
     template_name = 'hero/view_hero_user.html'
 
     def get(self, request):
-        my_hero = Specifications.objects.filter(user=3)
+        my_hero = Specifications.objects.filter(user=1)
         return Response({'my_hero': my_hero})
 
 
@@ -26,6 +26,9 @@ class EditHeroAPI(APIView):
     def get(self, request, specifications_pk):
         heros_spec = get_object_or_404(Specifications, pk=specifications_pk)
         serializer = SpecificationsSerializer(heros_spec)
+        # heto = Hero.objects.get(pk=3)
+        # us = heto.any_hero.all().values()
+        # print(us)
         return Response({'serializer': serializer,
                          'heros_spec': heros_spec})
 
@@ -37,6 +40,7 @@ class EditHeroAPI(APIView):
                              'heros_spec': heros_spec})
         serializer.save()
         return redirect('view_hero_user')
+
 
 # def edit_hero(request, specifications_id):
 #     post = get_object_or_404(Specifications, pk=specifications_id)

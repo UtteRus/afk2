@@ -1,4 +1,4 @@
-from django.conf import settings
+from django.contrib.auth.models import User
 from django.core.validators import MinValueValidator, MaxValueValidator
 from django.db import models
 
@@ -142,10 +142,11 @@ class Specifications(models.Model):
                                                       verbose_name='дата '
                                                                    'изменения')
     hero = models.ForeignKey(Hero, on_delete=models.CASCADE,
-                             verbose_name='герой')
-    user = models.ForeignKey(settings.AUTH_USER_MODEL,
+                             verbose_name='герой', related_name='any_hero')
+    user = models.ForeignKey(User,
                              on_delete=models.CASCADE,
-                             verbose_name='Пользователь')
+                             verbose_name='Пользователь',
+                             related_name='userHero')
 
     class Meta:
         verbose_name = 'Спецификации героев'

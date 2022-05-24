@@ -1,12 +1,12 @@
 from django.db import models
-from django.conf import settings
+from django.contrib.auth.models import User
 
 
 class Profile(models.Model):
-    user = models.OneToOneField(settings.AUTH_USER_MODEL,
+    user = models.OneToOneField(User,
                                 on_delete=models.CASCADE,
                                 verbose_name='Пользователь')
-    id_account = models.IntegerField(verbose_name='ид аккаунта')
+    id_account = models.IntegerField(verbose_name='ид аккаунта',)
     position_in_the_guild = models.CharField(verbose_name='должность в '
                                                           'гильдии',
                                              max_length=255)
