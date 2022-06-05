@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from .serializers import SpecificationsSerializer
+from .serializers import SpecificationsSerializer, SpecificationsHireSerializer
 from .models import Specifications, Hero
 from rest_framework import generics
 from rest_framework.renderers import TemplateHTMLRenderer
@@ -48,10 +48,17 @@ class HireViewsAPI(APIView):
 
     def get(self, request):
         hire_hero = Specifications.objects.filter(hair=True)
-        return Response({'hire_hero': hire_hero})
+        serializer = SpecificationsHireSerializer()
+        return Response({'hire_hero': hire_hero, 'serializer': serializer})
 
 
+class AddHireAPI(APIView):
+    renderer_classes = [TemplateHTMLRenderer]
+    template_name = 'hero/add_hire.html'
 
+    def get(self,request):
+        serializer = SpecificationsHireSerializer()
+        return Response({'serializer': serializer})
 
 # def edit_hero(request, specifications_id):
 #     post = get_object_or_404(Specifications, pk=specifications_id)

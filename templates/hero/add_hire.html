@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% load rest_framework %}
+
+{% block content %}
+    <form action="" method="post">
+    {% csrf_token %}
+    {% render_form serializer %}
+        <button type="submit">Сохранить</button>
+    </form>
+{% endblock content %}

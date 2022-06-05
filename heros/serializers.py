@@ -10,7 +10,13 @@ class SpecificationsSerializer(serializers.ModelSerializer):
 
 
 class SpecificationsHireSerializer(serializers.ModelSerializer):
-    available_heroes = serializers.IntegerField(choices=[
-        (value.pk, value.hero_name) for value in Hero.objects.all()])
+    # choi = [
+    #     (value.pk, value.hero_name) for value in Hero.objects.all()]
+    choi = Hero.objects.all().values_list('pk', 'hero_name')
+    available_heroes = serializers.ChoiceField(choices=choi)
+
+    class Meta:
+        model = Specifications
+        fields = ['available_heroes', 'named_item']
 
 
