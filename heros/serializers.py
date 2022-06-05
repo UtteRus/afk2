@@ -7,3 +7,10 @@ class SpecificationsSerializer(serializers.ModelSerializer):
         model = Specifications
         fields = ['pk', 'named_item', 'furniture', 'engraving',
                   'evolution', 'hair', ]
+
+
+class SpecificationsHireSerializer(serializers.ModelSerializer):
+    available_heroes = serializers.IntegerField(choices=[
+        (value.pk, value.hero_name) for value in Hero.objects.all()])
+
+

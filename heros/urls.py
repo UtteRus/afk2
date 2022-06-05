@@ -7,4 +7,5 @@ urlpatterns = [
     path('hero/', views.ViewHeroUserAPIList.as_view(), name='view_hero_user'),
     path('hero/edit-hero/<int:specifications_pk>/',
          views.EditHeroAPI.as_view(), name='edit_hero'),
+    path('hire/', views.HireViewsAPI.as_view(), name='hire'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

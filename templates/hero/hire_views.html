@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% load rest_framework %}
+
+{% block content %}
+    {% for hire in hire_hero %}
+        <p>{{ hire.hero.hero_name }}</p>
+        <p>{{ hire.user.profile.id_account }}</p>
+    {% endfor %}
+{% endblock content %}

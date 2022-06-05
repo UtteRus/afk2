@@ -21,3 +21,6 @@ class SpecificationsAdmin(admin.ModelAdmin):
 admin.site.register(Hero, HeroAdmin)
 admin.site.register(Specifications, SpecificationsAdmin)
 
+admin.site.site_title = 'AFK ARENA'
+admin.site.site_header = 'AFK ARENA'
+

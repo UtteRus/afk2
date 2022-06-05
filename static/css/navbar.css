@@ -3,7 +3,8 @@
 body {background-color:#ddd;}
 
 #mainNav {
-    background-color:#f60;
+    background: rgb(2,0,36);
+    background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
     font-size:0;
     text-align:center;
     width:100%;
@@ -24,7 +25,9 @@ body {background-color:#ddd;}
 }
 
 #mainNav a:hover {
-    background-color:#900; transition: background .25s ease;
+    background: rgb(2,0,36);
+    background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(9,9,121,0.3813725319229254) 13%, rgba(0,212,255,0.06484592127866773) 100%);
+    transition: background .25s ease;
 
 }
 
@@ -58,13 +61,16 @@ body {background-color:#ddd;}
     text-decoration:none;
 }
 
-#mainNav .sub-menu a:hover {background-color:#f60;}
+#mainNav .sub-menu a:hover {
+    background: rgb(2,0,36);
+    background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+}
 
 #mainNav ul.sub-menus{
     height: auto;
     overflow: hidden;
     width: 170px;
-    background: #f60;
+    background: rgb(2,0,36);
     position: absolute;
     z-index: 99;
     display: none;
@@ -79,13 +85,14 @@ body {background-color:#ddd;}
     width: 100%;
 }
 #mainNav ul.sub-menus a {
-    background-color:#f60;
+    background: rgb(2,0,36);
     font-size: 16px;
 }
 #mainNav li:hover ul.sub-menus {
     display: block
 }
 #mainNav ul.sub-menus a:hover{
-    background-color:#900;
+    background: rgb(2,0,36);
+    background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(9,9,121,0.7287114674971551) 13%, rgba(0,212,255,0.14047617337950802) 100%);
 
 }

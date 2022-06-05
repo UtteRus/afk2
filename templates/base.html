@@ -13,7 +13,7 @@
                 <li style="float: left"><a href="{% url 'view_hero_user' %}"><i class="icon-desktop"></i><br />Герои</a>
                 </li>
                 <li style="float: left"><a href="#"><i class="icon-user"></i><br />Будет какая хрень</a></li>
-                <li style="float: left"><a href="#"><i class="icon-user"></i><br />Найм</a></li>
+                <li style="float: left"><a href="{% url 'hire' %}"><i class="icon-user"></i><br />Найм</a></li>
                 <li style="float: left"><a href="#"><i class="icon-user"></i><br />Боссы</a>
                     <ul class='sub-menus'>
                         <li><a href='#'>Services Sub Menu 1</a></li>
@@ -21,11 +21,11 @@
                         <li><a href='#'>Services Sub Menu 3</a></li>
                     </ul>
                 </li>
+
                 <li style="float: right"><a href="#"><i class="icon-twitter"></i><br />Выход</a></li>
                 <li style="float: right"><a href="#"><i class="icon-twitter"></i><br />Профиль</a></li>
-                <li style="float: right"><a href="#"><i class="icon-twitter"></i><br />Админка</a></li>
-                <li style="float: right"><a href="{% url 'login' %}"><i class="icon-twitter"></i><br />Вход</a></li>
-                <li style="float: right"><a href="#"><i class="icon-twitter"></i><br />Регистрация</a></li>
+                <li style="float: right"><a href="{% url 'login' %}"><i class="icon-twitter"></i><br />Войти</a></li>
+                <li style="float: right"><a href="{% url 'registration' %}"><i class="icon-twitter"></i><br/>Регистрация</a></li>
         </ul><div class="clr"></div>
     </nav>
 {% endblock mainmenu %}

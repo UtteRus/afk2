@@ -1,21 +1,21 @@
-from django.forms import model_to_dict
-from django.http import HttpResponse, HttpResponseNotFound, Http404
 from django.shortcuts import render, redirect, get_object_or_404
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from .serializers import SpecificationsSerializer
-from .forms import EditSpecificationsHeroForm
 from .models import Specifications, Hero
 from rest_framework import generics
 from rest_framework.renderers import TemplateHTMLRenderer
+from rest_framework import permissions
 
 
 class ViewHeroUserAPIList(APIView):
+    #permission_classes = [permissions.IsAuthenticated]
     renderer_classes = [TemplateHTMLRenderer]
     template_name = 'hero/view_hero_user.html'
 
+
     def get(self, request):
-        my_hero = Specifications.objects.filter(user=1)
+        my_hero = Specifications.objects.filter(user=3)
         return Response({'my_hero': my_hero})
 
 
@@ -40,6 +40,17 @@ class EditHeroAPI(APIView):
                              'heros_spec': heros_spec})
         serializer.save()
         return redirect('view_hero_user')
+
+
+class HireViewsAPI(APIView):
+    renderer_classes = [TemplateHTMLRenderer]
+    template_name = 'hero/hire_views.html'
+
+    def get(self, request):
+        hire_hero = Specifications.objects.filter(hair=True)
+        return Response({'hire_hero': hire_hero})
+
+
 
 
 # def edit_hero(request, specifications_id):
