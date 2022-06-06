@@ -17,6 +17,6 @@ class SpecificationsHireSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Specifications
-        fields = ['available_heroes', 'named_item']
+        fields = ['available_heroes', 'named_item', 'furniture', 'engraving', ]
 
 

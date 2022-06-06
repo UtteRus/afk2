@@ -1,5 +1,6 @@
+from django.contrib.auth import authenticate
 from django.contrib.auth.models import User
-from rest_framework import serializers
+from rest_framework import serializers, exceptions
 from heros.models import Specifications, Hero
 from .models import Profile
 
@@ -28,3 +29,10 @@ class RegistrationSerializers(serializers.ModelSerializer):
         for heros in Hero.objects.all():
             Specifications.objects.create(user_id=user.pk, hero_id=heros.pk)
         return user
+
+
+class LoginSerializers(serializers.ModelSerializer):
+
+    class Meta:
+        model = User
+        fields = ['username', 'password', ]

@@ -1,5 +1,10 @@
 {% extends 'base.html' %}
+{% load rest_framework %}
 
 {% block content %}
-<h1>Hello</h1>
+    <form action="{% url 'login' %}" method="post">
+    {% csrf_token %}
+    {% render_form serializer %}
+        <button type="submit">Войти</button>
+    </form>
 {% endblock content %}
